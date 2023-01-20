@@ -14,18 +14,25 @@ server.listen(port, host, () => {
 // ecoute le serveur et execute la commande
 
 const fs = require("fs");
+// import de 'fs'
 
 fs.writeFile("firstFile.txt", "hello world", (err) => {
   if (err) throw err;
   console.log("fichier créé");
 });
-// write a new file in my folder with node
+// write a new file in my folder with node - fs.writeFile('nom du nouveau dossier', 'contenu du fichier', (err) =>{
+// if (err) throw err;
+// console.log("fichier créé")
+// })
 
 fs.readFile("firstFile.txt", "utf-8", (err, data) => {
   if (err) throw err;
   console.log(data);
 });
-// lire un fichier avec node
+// read a file with node - fs.readFile('fichier à lire', 'utf-8', (err, data) => {
+// if (err) throw err;
+// console.log(data)
+// })
 
 const axios = require("axios");
 axios.get("http://www.google.com").then((res) => {
